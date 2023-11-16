@@ -1,6 +1,6 @@
 # My First Repository
 Class work by Dr. B
-## Header
+## Creating github 
 
 ### sub-header
 
