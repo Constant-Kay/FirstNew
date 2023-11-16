@@ -1,4 +1,4 @@
-# FirstNew
+# My First Repository
 Class work by Dr. B
 ## Header
 
