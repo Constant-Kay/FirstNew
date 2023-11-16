@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+author: "Constant Yaokumah"
+date: "2023-11-14"
+output: pdf_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(datasets)
+library(ggplot2)
+library(dplyr)
+data("trees")
+model <- lm(Volume ~ Height, data = trees)
+summary(model)
+data <- trees %>%  mutate(fit = fitted(model))
+data
+
+p <- ggplot(data = data, aes(x = Volume, y = Height)) + geom_point()
+ p + annotate('rect', xmin=65, xmax=75, ymin=60, ymax=74,
+                 fill='white', color='black') + geom_line(aes(y= fit))
+```
+
+Notes from class:
+add fitted regression, just summary(model), use either facet_wrap or grid
